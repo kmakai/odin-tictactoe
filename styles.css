@@ -14,6 +14,24 @@
 
 body{
     display: flex;
+    flex-direction: column;
     align-items: center;
     justify-content: center;
+    row-gap: 10px;
+}
+#winner{
+    border-radius: 3px;
+    font-size: large;
+    color: blue;
+    padding: 1em;
+
+}
+#start-reset{
+    background-color: rgb(156, 156, 201);
+    font-size: 1em;
+    border: none;
+    width: 50px;
+}
+.disp{
+    text-align: center;
 }
