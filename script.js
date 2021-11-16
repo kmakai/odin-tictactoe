@@ -2,7 +2,7 @@ const myGameBoard = (function () {
     const board = ['', '', '', '', '', '', '', '', ''];
     return { board }
 })();
-const b = myGameBoard.board;
+let b = myGameBoard.board;
 
 const playerFactory = (name, mark) => {
     return { name, mark };
@@ -27,35 +27,32 @@ const displayController = (function () {
 
 function game() {
 
-    const playerOne = playerFactory("Kenji", "X");
-    const playerTwo = playerFactory("Schmo", "O");
+    const playerOne = playerFactory(document.querySelector("#playerX").value , "X");
+    const playerTwo = playerFactory(document.querySelector("#playerO").value, "O");
     const pTurn = document.querySelector('#turn');
     function isGameOver() {
-        const board = myGameBoard.board;
+        //const board = myGameBoard.board;
         const winDisplay = document.querySelector('#winner');
-        if ((board[0] === 'X' && board[4] === 'X' && board[8] === 'X') ||
-            (board[2] === 'X' && board[4] === 'X' && board[6] === 'X') ||
-            (board[0] === 'X' && board[1] === 'X' && board[2] === 'X') ||
-            (board[3] === 'X' && board[4] === 'X' && board[5] === 'X') ||
-            (board[6] === 'X' && board[7] === 'X' && board[8] === 'X') ||
-            (board[0] === 'X' && board[3] === 'X' && board[6] === 'X') ||
-            (board[1] === 'X' && board[4] === 'X' && board[7] === 'X') ||
-            (board[2] === 'X' && board[5] === 'X' && board[8] === 'X')) {
-            console.log(` ${playerOne.name} Wins`);
-            winDisplay.style.border = "3px solid blue";
+        winDisplay.textContent = "";
+        if ((b[0] === 'X' && b[4] === 'X' && b[8] === 'X') ||
+            (b[2] === 'X' && b[4] === 'X' && b[6] === 'X') ||
+            (b[0] === 'X' && b[1] === 'X' && b[2] === 'X') ||
+            (b[3] === 'X' && b[4] === 'X' && b[5] === 'X') ||
+            (b[6] === 'X' && b[7] === 'X' && b[8] === 'X') ||
+            (b[0] === 'X' && b[3] === 'X' && b[6] === 'X') ||
+            (b[1] === 'X' && b[4] === 'X' && b[7] === 'X') ||
+            (b[2] === 'X' && b[5] === 'X' && b[8] === 'X')) {
             winDisplay.textContent = `The winner is ${playerOne.name}! CONGRATULATIONS!`;
             pTurn.textContent = "GAME OVER!";
             player = '';
-        } else if ((board[0] === 'O' && board[4] === 'O' && board[8] === 'O') ||
-            (board[2] === 'O' && board[4] === 'O' && board[6] === 'O') ||
-            (board[0] === 'O' && board[1] === 'O' && board[2] === 'O') ||
-            (board[3] === 'O' && board[4] === 'O' && board[5] === 'O') ||
-            (board[6] === 'O' && board[7] === 'O' && board[8] === 'O') ||
-            (board[0] === 'O' && board[3] === 'O' && board[6] === 'O') ||
-            (board[1] === 'O' && board[4] === 'O' && board[7] === 'O') ||
-            (board[2] === 'O' && board[5] === 'O' && board[8] === 'O')) {
-            console.log(` ${playerTwo.name} Wins`);
-            winDisplay.style.border = "3px solid blue";
+        } else if ((b[0] === 'O' && b[4] === 'O' && b[8] === 'O') ||
+            (b[2] === 'O' && b[4] === 'O' && b[6] === 'O') ||
+            (b[0] === 'O' && b[1] === 'O' && b[2] === 'O') ||
+            (b[3] === 'O' && b[4] === 'O' && b[5] === 'O') ||
+            (b[6] === 'O' && b[7] === 'O' && b[8] === 'O') ||
+            (b[0] === 'O' && b[3] === 'O' && b[6] === 'O') ||
+            (b[1] === 'O' && b[4] === 'O' && b[7] === 'O') ||
+            (b[2] === 'O' && b[5] === 'O' && b[8] === 'O')) {
             winDisplay.textContent = `The winner is ${playerTwo.name}! CONGRATULATIONS!`;
             pTurn.textContent = "GAME OVER!";
             player = '';
@@ -84,4 +81,21 @@ function game() {
     });
 }
 
-game();
+
+function clearBoard(){
+    b = ['','','','','','','','','']
+    displayController.setboard();
+    document.querySelector("#winner").textContent = "";
+}
+
+const startReset = document.querySelector("#start-reset");
+
+startReset.addEventListener("click",()=>{
+    game();
+    startReset.textContent = "reset";
+    startReset.addEventListener("click",(e)=>{
+        clearBoard();
+        game();
+        e.stopPropagation();
+    })
+})

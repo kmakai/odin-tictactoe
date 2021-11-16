@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -8,8 +9,20 @@
     <script src="script.js" defer></script>
     <title>Document</title>
 </head>
+
 <body>
-    <div class ="disp">
+    <div class="names">
+        <div>
+            <h4>Enter player X name:</h4>
+            <input type="text" name="playerX" id="playerX">
+        </div>
+        <div>
+            <h4>Enter player O name:</h4>
+            <input type="text" name="playerO" id="playerO">
+        </div>
+
+    </div>
+    <div class="disp">
         <button id="start-reset">Start</button>
         <h3 id="turn"></h3>
     </div>
@@ -28,4 +41,5 @@
         <p id="winner"></p>
     </div>
 </body>
+
 </html>

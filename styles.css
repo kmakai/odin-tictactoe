@@ -21,7 +21,7 @@ body{
 }
 #winner{
     border-radius: 3px;
-    font-size: large;
+    font-size: 2em;
     color: blue;
     padding: 1em;
 
@@ -34,4 +34,10 @@ body{
 }
 .disp{
     text-align: center;
+}
+.names{
+    display: flex;
+    justify-content:space-evenly;
+    align-items: center;
+    column-gap: 10px;
 }
