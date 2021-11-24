@@ -1,1 +1,1 @@
-# odin-tictactoe
+# odin-tictactoe project.
