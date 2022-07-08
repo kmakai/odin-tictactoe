@@ -1,45 +1,42 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="styles.css">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="styles.css" />
     <script src="script.js" defer></script>
     <title>Document</title>
-</head>
+  </head>
 
-<body>
+  <body>
     <div class="names">
-        <div>
-            <h4>Enter player X name:</h4>
-            <input type="text" name="playerX" id="playerX">
-        </div>
-        <div>
-            <h4>Enter player O name:</h4>
-            <input type="text" name="playerO" id="playerO">
-        </div>
-
+      <div>
+        <h4>Who is player X:</h4>
+        <input type="text" name="playerX" id="playerX" />
+      </div>
+      <div>
+        <h4>Who is player O:</h4>
+        <input type="text" name="playerO" id="playerO" />
+      </div>
     </div>
     <div class="disp">
-        <button id="start-reset">Start</button>
-        <h3 id="turn"></h3>
+      <button id="start-reset">Start</button>
     </div>
     <div class="board-container">
-        <div class="tile" id="0"></div>
-        <div class="tile" id="1"></div>
-        <div class="tile" id="2"></div>
-        <div class="tile" id="3"></div>
-        <div class="tile" id="4"></div>
-        <div class="tile" id="5"></div>
-        <div class="tile" id="6"></div>
-        <div class="tile" id="7"></div>
-        <div class="tile" id="8"></div>
+      <div class="tile" id="0"></div>
+      <div class="tile" id="1"></div>
+      <div class="tile" id="2"></div>
+      <div class="tile" id="3"></div>
+      <div class="tile" id="4"></div>
+      <div class="tile" id="5"></div>
+      <div class="tile" id="6"></div>
+      <div class="tile" id="7"></div>
+      <div class="tile" id="8"></div>
     </div>
     <div>
-        <p id="winner"></p>
+      <h3 id="turn"></h3>
+      <p id="winner"></p>
     </div>
-</body>
-
+  </body>
 </html>
